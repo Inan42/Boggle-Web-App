@@ -1,0 +1,19 @@
+{{#if user}}
+<script src="scripts/bundle.js"></script>
+<div class="start">
+    <form method="GET" action="/play/board">
+        Size: <input type="radio" name="size" value="4">4x4 <input type="radio" name="size" value="5">5x5 <br>
+        Time: <input type="radio" name="time" value="60">60s <input type="radio" name="time" value="120">120s <br>
+        	<input type="submit" value="Play" class="playBtn">
+    </form>
+</div>
+
+<div class="game">
+    
+</div>
+
+{{error}}
+{{else}}
+    <br>
+    You must be logged in to play a game.
+{{/if}}

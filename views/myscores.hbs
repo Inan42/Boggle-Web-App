@@ -1,0 +1,21 @@
+{{#if user}}
+    <h2>Some stats for your games </h2>
+    <form method="POST" action="/myscores/del/">
+    {{#each users}}
+        <strong>{{this.username}}</strong><br>
+        {{#each this.games}}
+            <input type="checkbox" name="delete" value="{{this._id}}">
+            Size: {{this.size}}x{{this.size}} <br>
+            Time: {{this.time}}s <br>
+            Score: {{this.score}}<br>
+    
+        <br>
+        {{/each}}
+        <br>
+    {{/each}}
+    <input type="submit" value="Delete" id="submitButton2">
+    </form>
+{{else}}
+    <br>
+    You must be logged in to see this page
+{{/if}}

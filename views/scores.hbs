@@ -1,0 +1,26 @@
+<h2> Public Stats </h2>
+<form action="" method="GET">
+  Size: <select name="size">
+    <option value="4">4x4</option>
+    <option value="5">5x5</option>
+  </select>
+  Time: <select name="time">
+    <option value="60">60s</option>
+    <option value="120">120s</option>
+  </select>
+  <br><br>
+  <input type="submit" id="filtersubmit" value="Filter">
+</form>
+<br>
+
+{{#each users}}
+    <strong>{{this.username}}</strong><br>
+    {{#each this.games}}
+        Size: {{this.size}}x{{this.size}} <br>
+        Time: {{this.time}}s <br>
+        Score: {{this.score}}<br>
+
+    <br>
+    {{/each}}
+    <br>
+{{/each}}
